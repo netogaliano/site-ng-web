@@ -19,7 +19,7 @@
 
   --text-main: #F8FAFC;
   --text-muted: #94A3B8;
-  --text-faint: #64748B;
+  --text-faint: #94A3B8;
 
   /* Tipografia */
   --font-heading: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -64,6 +64,8 @@ body {
 /* Trava scroll do body com menu mobile aberto */
 body.menu-open {
   overflow: hidden;
+  touch-action: none;
+  -webkit-overflow-scrolling: auto;
 }
 
 a {
@@ -460,12 +462,8 @@ img {
   border-radius: var(--radius-md);
   box-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.6);
   padding: 1.5rem;
-  transform: perspective(1000px) rotateY(-4deg) rotateX(3deg);
+  transform: perspective(1000px) rotateY(0deg) rotateX(0deg);
   transition: var(--transition-default);
-}
-
-.device-card:hover {
-  transform: perspective(1000px) rotateY(0deg) rotateX(0deg) translateY(-4px);
 }
 
 .device-card__header {
@@ -514,21 +512,14 @@ img {
   margin-bottom: 1.5rem;
 }
 
-.mock-bars {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-bottom: 2rem;
+.device-card__video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  margin: 1.25rem 0;
 }
-
-.bar {
-  height: 10px;
-  background: var(--bg-surface-elevated);
-  border-radius: 6px;
-}
-.bar--1 { width: 90%; }
-.bar--2 { width: 75%; }
-.bar--3 { width: 60%; }
 
 .mock-stat {
   display: flex;
@@ -1053,17 +1044,13 @@ img {
     padding: 4.5rem 0;
   }
 
-  .device-card {
-    transform: none !important;
-  }
-
+  /* 1. Desativa a inclinação 3D e reduz o padding interno no celular */
   .hero__visual {
     width: 100%;
     max-width: 100%;
     margin-top: 2rem;
   }
 
-  /* 1. Desativa a inclinação 3D e reduz o padding interno no celular */
   .device-card {
     transform: none !important;
     padding: 1.15rem;
