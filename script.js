@@ -1,7 +1,3 @@
-/**
- * NG Web - Scripts de Alta Performance e Acessibilidade
- */
-
 document.addEventListener('DOMContentLoaded', () => {
   'use strict';
 
